@@ -6,7 +6,7 @@ import { Box, Card, CircularProgress, Typography } from "@mui/material";
 
 export default function Home() {
   const navigate = useNavigate();
-  const [userDetails, setUserDetails] = useState({});
+  const [userDetails, setUserDetails] = useState(null);
 
   const getUserDetails = async (accessToken) => {
     const response = await fetch(
@@ -22,6 +22,7 @@ export default function Home() {
 
     if (!accessToken) {
       navigate("/login");
+      return;
     }
 
     getUserDetails(accessToken);
@@ -59,6 +60,7 @@ export default function Home() {
               <img
                 src={userDetails.picture}
                 alt={`${userDetails.given_name}'s profile`}
+                referrerPolicy="no-referrer"
                 className="profile-pic"
               />
               <p>Welcome back to Devteria,</p>

@@ -81,6 +81,12 @@ web_modules/
 .env.production.local
 .env.local
 
+# Local Spring Boot configuration with secrets
+application-local.yaml
+application-local.yml
+application-*.local.yaml
+application-*.local.yml
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
